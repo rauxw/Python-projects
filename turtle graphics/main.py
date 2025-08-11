@@ -13,16 +13,14 @@ def random_color():
   color = (r, g, b)
   return color
 
-def spirograph(num):
-  for _ in range(num):
-    jack.circle(100)
+def spirograph(size_of_graph):
+  for _ in range(360 // size_of_graph):
     jack.color(random_color())
-    current_heading = jack.heading()
-    jack.setheading(current_heading + 10)
     jack.circle(100)
+    current_heading = jack.heading()
+    jack.setheading(current_heading + size_of_graph)
 
-spirograph(36)
-
+spirograph(1)
 
 
 
