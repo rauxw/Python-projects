@@ -10,5 +10,15 @@ question_data = [
 {"text": "Google was originally called 'Backrub'.", "answer": "True"},
 {"text": "Buzz Aldrin's mother's maiden name was 'Moon'.", "answer": "True"},
 {"text": "No piece of square dry paper can be folded in half more than 7 times.", "answer": "False"},
-{"text": "A few ounces of chocolate can to kill a small dog.", "answer": "True"}
+{"text": "A few ounces of chocolate can to kill a small dog.", "answer": "True"},
+{"text": "Ottoman Empire was created in 1299.", "answer": "True"},
+{"text": "In World War ll, Great Britain used inflatable tanks on the ports of Great Britain to divert Hitler away from Normandy/D-day landing.", "answer": "True"},
+{"text": "The Cold War ended with Joseph Stalin's death.", "answer": "False"},
+{"text": "Joseph Stalin's real name was Ioseb Bessarionis dze Dzugashvili.", "answer": "True"},
+{"text": "Oxford University is older than the Aztec Empire.", "answer": "True"},
+{"text": "Martin Luther King Jr. and Anne Frank were born the same year.", "answer": "True"},
+{"text": "Former United States Presidents John Adams and Thomas Jefferson died within hours of each other.", "answer": "True"},
+{"text": "The majority of people that lived under the Byzantine Empire called themselves Romans.", "answer": "True"},
+{"text": "The Kingdom of Prussia briefly held land in Estonia.", "answer": "False"},
+{"text": "In World War II, Hawker Typhoons served in the Pacific theater.", "answer": "False"}
 ]
