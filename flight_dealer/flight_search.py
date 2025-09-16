@@ -48,7 +48,7 @@ class FlightSearch:
             "destinationLocationCode": destination_city_code,
             "departureDate": from_time.strftime("%Y-%m-%d"),
             "adults": 1,
-            "nonStop": "true",
+            "nonStop": "false",
             "currencyCode": "GBP",
             "max": "10"
         }
