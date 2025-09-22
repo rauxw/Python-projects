@@ -12,7 +12,6 @@ notification_mg = NotificationManager()
 
 ORIGIN_CITY_IATA = "LON"
 
-
 for row in sheet_data:
     if not row['iataCode']:
         row['iataCode'] = flight_search.get_destination_code(row['city'])
@@ -41,15 +40,20 @@ for destination in sheet_data:
 
     cheapest_flight = find_cheapest_flight(flights)
 
-    if cheapest_flight.price != "N/A":
-        if cheapest_flight.price < destination["lowestPrice"]:
-            notification_mg.send_sms(message_body=f"✅ Deal! {destination['city']}: £{cheapest_flight.price} "
-                  f"(threshold {destination['lowestPrice']})")
+    if cheapest_flight.price != "N/A" and cheapest_flight.price < destination["lowestPrice"]:
+        if cheapest_flight.stops == 0:
+            message = f"Low price alert! Only GBP {cheapest_flight.price} to fly direct "\
+                      f"from {cheapest_flight.origin_airport} to {cheapest_flight.destination_airport}, "\
+                      f"on {cheapest_flight.out_date} until {cheapest_flight.return_date}."
         else:
-            print(f"❌ Too expensive for {destination['city']}: £{cheapest_flight.price} "
-                  f"(threshold {destination['lowestPrice']})")
-    else:
-        print(f"{destination['city']}: No flights found")
+            message = f"Low price alert! Only GBP {cheapest_flight.price} to fly "\
+                      f"from {cheapest_flight.origin_airport} to {cheapest_flight.destination_airport}, "\
+                      f"with {cheapest_flight.stops} stop(s) "\
+                      f"departing on {cheapest_flight.out_date} and returning on {cheapest_flight.return_date}."
+
+        print(f"Check your email. Lower price flight found to {destination['city']}!")
+
+        notification_mg.send_sms(message_body=message)
 
     time.sleep(2)
 
